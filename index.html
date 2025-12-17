@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Article Classification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📰 News Article Classifier</h1>
+                <p class="subtitle">Powered by Apache Spark MLlib</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <h2>Enter News Article</h2>
+                <textarea 
+                    id="articleText" 
+                    placeholder="Paste your news article here...&#10;&#10;Example:&#10;The football team won the championship after a thrilling final match. The star player scored three goals in the second half, securing their victory against their long-time rivals."
+                    rows="10"
+                ></textarea>
+                
+                <div class="button-group">
+                    <button id="classifyBtn" class="btn btn-primary">
+                        <span class="btn-icon">🔍</span>
+                        Classify Article
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <span class="btn-icon">🗑️</span>
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Sample Articles -->
+                <div class="samples">
+                    <h3>Try Sample Articles:</h3>
+                    <div class="sample-buttons">
+                        <button class="sample-btn" data-category="Sports">Sports</button>
+                        <button class="sample-btn" data-category="Business">Business</button>
+                        <button class="sample-btn" data-category="Technology">Technology</button>
+                        <button class="sample-btn" data-category="Politics">Politics</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>Classification Results</h2>
+                
+                <!-- Predicted Category -->
+                <div class="prediction-card">
+                    <div class="prediction-label">Predicted Category</div>
+                    <div class="prediction-value" id="predictedCategory">-</div>
+                    <div class="confidence-badge" id="confidenceBadge">
+                        Confidence: <span id="confidenceValue">0%</span>
+                    </div>
+                </div>
+
+                <!-- Probability Chart -->
+                <div class="chart-container">
+                    <h3>Category Probabilities</h3>
+                    <div id="probabilityChart" class="probability-chart"></div>
+                </div>
+
+                <!-- Article Preview -->
+                <div class="article-preview">
+                    <h3>Article Preview</h3>
+                    <p id="articlePreview"></p>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+                <div class="spinner"></div>
+                <p>Classifying article...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <span class="error-icon">⚠️</span>
+                <span id="errorText"></span>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Built with Apache Spark MLlib, Flask & Modern Web Technologies</p>
+                <div class="tech-badges">
+                    <span class="badge">Spark MLlib</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">NLP</span>
+                    <span class="badge">Machine Learning</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
